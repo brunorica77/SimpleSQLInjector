@@ -101,32 +101,34 @@ func print_table(c chan string) {
     fmt.Printf(blueColour+"[%v] "+greenColour+"Payload:"+redColour+"%v\n"+blueColour+"[%v] "+greenColour+"Resultats: "+redColour+"%v\n\n"+endColour,a1,payload,a2,result)
     counter++
   }
-
-
-  splited_output := strings.Split(result,",")
-  var max_length int
-  for _,v := range splited_output {
-    if max_length < len(v) {
-      max_length = len(v)
-    }
-  }
-  var result_final string = blueColour+"+"+strings.Repeat("-",max_length+2)+"+\n| "+endColour
-  max_length+=2
-  counter=0
-  for _,v := range result {
-    if v != ',' {
-      result_final+=fmt.Sprintf(purpleColour+"%c"+endColour, v)
-      counter+=1
-    }else {
-      if counter != max_length {
-        result_final+=strings.Repeat(" ",max_length-counter-1)
-      }
-    result_final+=(blueColour+"|\n+"+strings.Repeat("-",max_length)+"+\n| "+endColour)
-    counter=0
-    }
-  }
   
-  fmt.Println(result_final+blueColour+strings.Repeat(" ",max_length-counter-1)+"|\n+"+strings.Repeat("-",max_length)+"+"+endColour)
+  if result != "" {
+
+    splited_output := strings.Split(result,",")
+    var max_length int
+    for _,v := range splited_output {
+      if max_length < len(v) {
+        max_length = len(v)
+      }
+    }
+    var result_final string = blueColour+"+"+strings.Repeat("-",max_length+2)+"+\n| "+endColour
+    max_length+=2
+    counter=0
+    for _,v := range result {
+      if v != ',' {
+        result_final+=fmt.Sprintf(purpleColour+"%c"+endColour, v)
+        counter+=1
+      }else {
+        if counter != max_length {
+          result_final+=strings.Repeat(" ",max_length-counter-1)
+        }
+      result_final+=(blueColour+"|\n+"+strings.Repeat("-",max_length)+"+\n| "+endColour)
+      counter=0
+      }
+    }
+    
+    fmt.Println(result_final+blueColour+strings.Repeat(" ",max_length-counter-1)+"|\n+"+strings.Repeat("-",max_length)+"+"+endColour)
+  }
 }
 
 
