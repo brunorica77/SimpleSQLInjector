@@ -6,12 +6,12 @@ Building:
 Build on Linux:
 
 ```bash
-go build -o SimpleSQLI ./main.go ./tests.go -ldflags "-s -w" && upx brute ./SimpleSQLI && ./SimpleSQLI
+go build -o SimpleSQLI -ldflags "-s -w" ./main.go ./tests.go && upx brute ./SimpleSQLI && ./SimpleSQLI
 ```
 Build from Linux for Windows:
 
 ```bash
-env GOOS=windows GOARCH=amd64 go build -o ./SimpleSQLI -ldflags "-s -w" ./main3.go ./tests.go &&
+env GOOS=windows GOARCH=amd64 go build -o SimpleSQLI -ldflags "-s -w" ./main3.go ./tests.go &&
 ```
 
 Build on Windows:
