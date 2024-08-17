@@ -11,7 +11,7 @@ go build -o SimpleSQLI -ldflags "-s -w" ./main.go ./tests.go && upx brute ./Simp
 Build from Linux for Windows:
 
 ```bash
-env GOOS=windows GOARCH=amd64 go build -o SimpleSQLI -ldflags "-s -w" ./main.go ./tests.go && upx brute ./SimpleSQLI
+env GOOS=windows GOARCH=amd64 go build -o SimpleSQLI.exe -ldflags "-s -w" ./main.go ./tests.go && upx brute ./SimpleSQLI.exe
 ```
 
 Build on Windows:
