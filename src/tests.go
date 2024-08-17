@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"net/url"
-	"slices" // no fa falta si es fa funció que trobi index de una cosa
+	"slices"
 	"strings"
 )
 
@@ -127,22 +127,4 @@ func (q *QuerySQL) process_query(queryraw string, db string) error {
 	}
 	return nil
 }
-// var data = data_processor{url.Values{"user":{"hs"},"hff": {"ddd"} } }
-/*
-func main() {
-	var data, err = DataInit(`username=SQLI&password=test`)
-	if err != nil {
-		fmt.Printf("%v", err)
-		os.Exit(1)
-	}
-	data.payload_load("' or 1=1#")
-	fmt.Printf("%v", data.value)
-  var query, err2 = QueryInit(`desc taula`, `chat`)
-	if err2 != nil {
-		fmt.Printf("%v", err2)
-		os.Exit(1)
-	}
-	fmt.Printf("\n%v , %v, %v", query.selectsql, query.fromsql, query.extrasql)
-}
-*/
 
