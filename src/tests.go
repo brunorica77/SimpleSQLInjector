@@ -127,6 +127,7 @@ func (q *QuerySQL) process_query(queryraw string, db string) error {
 			q.extrasql += splited_query[i] + " "
 
 		}
+		q.selectsql = strings.ReplaceAll(q.selectsql,",",",0x3a,")
 	}
 	return nil
 }
