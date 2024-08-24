@@ -105,7 +105,10 @@ func (q *QuerySQL) process_query(queryraw string, db string) error {
 
 		}
 	}
-  
+  	if !strings.Contains(queryraw,"select") {
+    		var err = errors.New("Consulta SQL incorrecta.")
+    		return err
+  	}
 	splited_query := strings.Split(queryraw, " ")
 	for i := slices.Index(splited_query, "select") + 1; i <= len(splited_query)-1; i++ {
 
