@@ -17,7 +17,7 @@ env GOOS=windows GOARCH=amd64 go build -o SimpleSQLI.exe -ldflags "-s -w" ./main
 Build on Windows:
 
 ```powershell
-go build -o ./SimpleSQLI -ldflags "-s -w" ./main3.go ./tests.go
+go build -o ./SimpleSQLI -ldflags "-s -w" ./main.go ./tests.go
 ```
 
 ---
